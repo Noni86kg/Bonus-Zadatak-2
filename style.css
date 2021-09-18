@@ -10,3 +10,101 @@
     padding: 0;
     box-sizing: border-box;
   }
+body {
+    background-image: linear-gradient(var(--lightPink), var(--pink));
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container {
+    width: 65vw;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    display: flex;
+}
+section {
+    width: 50%;
+    display: flex;
+    padding: 50px 0;
+    overflow: hidden;
+}
+/***********
+left side
+***********/
+section:first-child {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.imgWoman {
+    background-image: url(images/illustration-woman-online-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 450px;
+    height: 450px;
+    position: relative;
+    left: -50px;
+    z-index: 5;
+}
+.imgWoman::before {
+    content: url(images/bg-pattern-desktop.svg);
+    display: block;
+    position: absolute;
+    background-size: 100%;
+    left: -512px;
+    top: -350px;
+    z-index: -1;
+}
+.box {
+    position: absolute;
+    display: block;
+    z-index: 10;
+    left: calc(35vw / 2 - 92px);
+}
+/***********
+right side
+***********/
+section:last-child {
+    flex-direction: column;
+}
+article {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--gray);
+    align-items: center;
+    flex-wrap: wrap;
+}
+h1 {
+    margin-bottom: 25px;
+    color: var(--black);
+}
+article p {
+    width: 80%;
+    color: var(--gray);
+    padding: 15px 0;
+}
+article p:hover {
+    color: var(--orange);
+    cursor: pointer;
+    transition: .3s ease;
+}
+#active p:hover {
+    color: var(--gray);
+    cursor: auto;
+}
+#active p:first-child {
+    font-weight: 900;
+    color: var(--black);
+}
+.arrowDown {
+    background-image: url(images/icon-arrow-down.svg);
+    background-position: center;
+    background-size: cover;
+    height: 8px;
+    width: 16px;
+    position: relative;
+    left: -1vw;
+}
