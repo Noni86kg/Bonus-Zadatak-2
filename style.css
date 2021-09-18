@@ -1,0 +1,12 @@
+:root {
+    --lightPink: rgb(176, 104, 223);
+    --pink: rgb(100, 99, 231);
+    --orange: rgb(255, 146, 113);
+    --black: rgb(30, 31, 54);
+    --gray: rgb(120, 120, 135);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
