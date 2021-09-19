@@ -20,7 +20,7 @@ body {
 }
 .container {
     width: 65vw;
-    margin: 0 auto;
+    margin: 0px auto;
     background: white;
     border-radius: 30px;
     display: flex;
@@ -86,20 +86,12 @@ article p {
     color: var(--gray);
     padding: 15px 0;
 }
-article p:hover {
+.faq-title:hover {
     color: var(--orange);
     cursor: pointer;
     transition: .3s ease;
 }
-#active p:hover {
-    color: var(--gray);
-    cursor: auto;
-}
-#active p:first-child {
-    font-weight: 900;
-    color: var(--black);
-}
-.arrowDown {
+button.arrowDown {
     background-image: url(images/icon-arrow-down.svg);
     background-position: center;
     background-size: cover;
@@ -107,9 +99,28 @@ article p:hover {
     width: 16px;
     position: relative;
     left: -1vw;
+    border: none;
+    cursor: pointer;
 }
-#active .arrowDown {
+button {
+    background: white;
+}
+.active .arrowDown {
     transform: rotate(180deg);
+}
+.active .faq-title:hover {
+    color: var(--black);
+    cursor: auto;
+}
+.active .faq-title {
+    font-weight: 900;
+    color: var(--black);
+}
+.faq-text {
+    display: none;
+}
+.faq.active .faq-text {
+    display: block;
 }
 /********************
 responsive for ipad
