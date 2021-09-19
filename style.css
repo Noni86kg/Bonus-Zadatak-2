@@ -30,6 +30,7 @@ section {
     display: flex;
     padding: 50px 0;
     overflow: hidden;
+    position: relative;
 }
 /***********
 left side
@@ -47,17 +48,15 @@ section:first-child {
     left: -50px;
     z-index: 5;
 }
-.imgWoman::before {
+.imgBottomShadow {
     content: url(images/bg-pattern-desktop.svg);
     position: absolute;
-    left: -512px;
-    top: -350px;
-    z-index: -1;
-}
-@media (max-width: 1400px) {
-    .imgWoman::before {
-        left: -545px;
-    }  
+    background-size: 100%;
+    width: 950px;
+    height: 950px;
+    left: -550px;
+    top: -300px;
+    z-index: 1;
 }
 .box {
     position: absolute;
@@ -109,17 +108,17 @@ article p:hover {
     position: relative;
     left: -1vw;
 }
+#active .arrowDown {
+    transform: rotate(180deg);
+}
 /********************
 responsive for ipad
 ********************/
 @media (max-width: 1200px) {
-    body {
-        height: auto;
-    }
     .container {
         width: 90vw;
         flex-direction: column;
-        margin: 250px auto 440px auto;
+        margin-top: 100px;
     }
     section:first-child {
         justify-content: center;
@@ -128,28 +127,29 @@ responsive for ipad
     section {
         width: 100%;
         overflow: visible;
-        padding: 85px 0;
+        padding: 75px 0;
     }
     .imgWoman {
+        background-image: url(images/illustration-woman-online-mobile.svg);
         position: absolute;
         left: auto;
-        top: 45px;
-    }
-    .imgWoman::before {
-        display: none;
+        top: -183px;
     }
     .box {
-        left: calc(52vw - 250px);
-        top: 170px;
+        display: none;
     }
     .imgBottomShadow {
+        display: none;
+    }
+    .imgBottomShadowMob {
         position: absolute;
         background-image: url(images/bg-pattern-mobile.svg);
-        background-size: 100%;
         width: 450px;
         height: 450px;
+        background-size: 89%;
         background-repeat: no-repeat;
-        top: 250px;
+        top: -10px;
+        background-position: top right 0px;
     }
     h1 {
         text-align: center;
@@ -165,25 +165,30 @@ responsive for ipad
 responsive for mobile
 ********************/
 @media (max-width: 767px) {
+    body {
+        height: auto;
+    }
     .imgWoman {
         background-image: url(images/illustration-woman-online-mobile.svg);
         width: 266px;
-        height: 196px;
+        top: -108px;
+    }
+    .container {
+        margin: 150px auto;
     }
     .box {
         display: none;
     }
-    .container {
-        margin: 150px auto 80px auto;
-    }
     section {
-        padding: 50px 0;
+        padding: 45px 0
     }
-    .imgBottomShadow {
+    .imgBottomShadowMob {
         width: 266px;
         height: 196px;
-        top: 145px;
-        background-size: 89%;
         background-position: top right 0px;
+    }
+    article {
+        width: 80%;
+        margin: 0 auto;
     }
 }
